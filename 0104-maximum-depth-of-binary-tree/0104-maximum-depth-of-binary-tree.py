@@ -8,13 +8,11 @@ class TreeNode(object):
 
 class Solution(object):
     def maxDepth(self, root):
-        # Base case: If the root is None, the depth is 0.
-        if root is None:
+        
+        if(root==None):
             return 0
-
-        left_depth = self.maxDepth(root.left)
-        right_depth = self.maxDepth(root.right)
-
-        return max(left_depth, right_depth) + 1
+        right = self.maxDepth(root.right) #this is for moving to the depth of right tree
+        left = self.maxDepth(root.left)  # this is for moving to the depth of left tree
+        return 1+max(right,left)
 
         
